@@ -6,6 +6,8 @@
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable-v24/downloadbutton.xml" value="0.26927083333333335" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable-v24/edittext_backgroud.xml" value="0.26927083333333335" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26927083333333335" />
+        <entry key="..\:/InstagramSaver/app/src/main/res/drawable-v24/main_ac.xml" value="0.2638888888888889" />
+        <entry key="..\:/InstagramSaver/app/src/main/res/drawable-v24/prgrsbr.xml" value="0.2638888888888889" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable/bg.xml" value="0.26927083333333335" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable/button.xml" value="0.26927083333333335" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable/edittextbg.xml" value="0.13697916666666668" />
@@ -16,10 +18,11 @@
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable/ic_share.xml" value="0.26927083333333335" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable/instanavbar_background.xml" value="0.26927083333333335" />
         <entry key="..\:/InstagramSaver/app/src/main/res/drawable/instasavelogo_background.xml" value="0.1453125" />
+        <entry key="..\:/InstagramSaver/app/src/main/res/drawable/mainac.xml" value="0.2638888888888889" />
         <entry key="..\:/InstagramSaver/app/src/main/res/font/.xml" value="0.2796875" />
         <entry key="..\:/InstagramSaver/app/src/main/res/layout/activity_how_to_use.xml" value="0.17203539823008848" />
         <entry key="..\:/InstagramSaver/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/InstagramSaver/app/src/main/res/layout/activity_splashscreen.xml" value="0.2" />
+        <entry key="..\:/InstagramSaver/app/src/main/res/layout/activity_splashscreen.xml" value="0.264" />
         <entry key="..\:/InstagramSaver/app/src/main/res/layout/fragment_igtvfragment.xml" value="0.2" />
         <entry key="..\:/InstagramSaver/app/src/main/res/layout/fragment_photofragment.xml" value="0.264" />
         <entry key="..\:/InstagramSaver/app/src/main/res/layout/fragment_profilefragment.xml" value="0.253125" />

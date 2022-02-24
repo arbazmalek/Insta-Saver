@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -55,6 +56,7 @@ public class reelfragment extends Fragment {
 
 
     ProgressBar progressBar;
+    RelativeLayout progress_barr;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,6 +74,7 @@ public class reelfragment extends Fragment {
         mediaController.setAnchorView(videoView);
         progressBar=v.findViewById(R.id.progressBar3);
         mAdView = v.findViewById(R.id.adView);
+        progress_barr = v.findViewById(R.id.progress_barr);
         //ads
 
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -122,6 +125,7 @@ public class reelfragment extends Fragment {
             if (TextUtils.isEmpty(getreel.getText().toString())) {
             } else {
                 progressBar.setVisibility(View.VISIBLE);
+                progress_barr.setVisibility(View.VISIBLE);
                 String result2 = StringUtils.substringBefore(URL, "/?");
                 URL = result2 + "/?__a=1";
 
@@ -129,7 +133,7 @@ public class reelfragment extends Fragment {
             }
         }
         catch (Exception e) {
-            Toast.makeText(getContext(), "Please copy link first "+("\ud83d\ude16"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please copy link first ", Toast.LENGTH_SHORT).show();
         }
 
         getcontent.setOnClickListener(v1 -> {
@@ -144,6 +148,7 @@ public class reelfragment extends Fragment {
                 Toast.makeText(getContext(), "First Enter URL", Toast.LENGTH_SHORT).show();
             } else {
                 progressBar.setVisibility(View.VISIBLE);
+                progress_barr.setVisibility(View.VISIBLE);
                 String result2 = StringUtils.substringBefore(URL, "/?");
                 URL = result2 + "/?__a=1";
 
@@ -175,9 +180,9 @@ public class reelfragment extends Fragment {
                  request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "" + System.currentTimeMillis() + ".mp4");
                  DownloadManager manager = (DownloadManager) requireActivity().getSystemService(Context.DOWNLOAD_SERVICE);
                  manager.enqueue(request);
-                 Toast.makeText(getContext(), "Downloaded "+("\ud83d\ude01"), Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getContext(), "Downloaded ", Toast.LENGTH_SHORT).show();
              } else {
-                 Toast.makeText(getContext(), "No video to download "+("\ud83d\ude13"), Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getContext(), "No video to download ", Toast.LENGTH_SHORT).show();
              }
          });
      }
@@ -244,10 +249,12 @@ public class reelfragment extends Fragment {
                 videoView.requestFocus();
                 videoView.start();
                 progressBar.setVisibility(View.GONE);
+                progress_barr.setVisibility(View.GONE);
             }
             catch (Exception e){
                // Toast.makeText(getContext(), "For photo download go to PHOTO", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
+                progress_barr.setVisibility(View.GONE);
                 Toast.makeText(getContext(), reelurl, Toast.LENGTH_SHORT).show();
             }
 

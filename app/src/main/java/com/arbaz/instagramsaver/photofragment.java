@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -64,6 +65,7 @@ public class photofragment extends Fragment {
     Button downloadphoto,sharephoto;
     ImageView delete;
     ProgressBar progressBar;
+    RelativeLayout progress_barr;
 
     String photourl="1";
     private Uri uri2;
@@ -85,6 +87,7 @@ public class photofragment extends Fragment {
         delete = v.findViewById(R.id.delete);
         progressBar = v.findViewById(R.id.progressBar);
         mAdView = v.findViewById(R.id.adView);
+        progress_barr = v.findViewById(R.id.progress_barr);
 
         //ads
 
@@ -140,13 +143,14 @@ public class photofragment extends Fragment {
             if (TextUtils.isEmpty(getphotolink.getText().toString())) {
             } else {
                 progressBar.setVisibility(View.VISIBLE);
+                progress_barr.setVisibility(View.VISIBLE);
                 String result2 = StringUtils.substringBefore(URL, "/?");
                 URL = result2 + "/?__a=1";
                 processdata();
 
             }
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Please copy link first " + ("\ud83d\ude16"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please copy link first ", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -162,6 +166,7 @@ public class photofragment extends Fragment {
                 Toast.makeText(getContext(), "First Enter URL", Toast.LENGTH_SHORT).show();
             } else {
                 progressBar.setVisibility(View.VISIBLE);
+                progress_barr.setVisibility(View.VISIBLE);
                 String result2 = StringUtils.substringBefore(URL, "/?");
                 URL = result2 + "/?__a=1";
                 processdata();
@@ -182,9 +187,9 @@ public class photofragment extends Fragment {
                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_PICTURES, File.separator + ".jpeg");
                 DownloadManager manager = (DownloadManager) requireActivity().getSystemService(Context.DOWNLOAD_SERVICE);
                 manager.enqueue(request);
-                Toast.makeText(getContext(), "Downloaded " + ("\ud83d\ude01"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Downloaded " , Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getContext(), "No photo to download " + ("\ud83d\ude13"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "No photo to download " , Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -248,12 +253,14 @@ try {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
                         progressBar.setVisibility(View.GONE);
+                        progress_barr.setVisibility(View.GONE);
                         return false;
                     }
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                         progressBar.setVisibility(View.GONE);
+                        progress_barr.setVisibility(View.GONE);
                         return false;
                     }
                 }).into(photoView);
@@ -261,6 +268,7 @@ try {
             catch (Exception e){
             //    Toast.makeText(getContext(), "Paste Photo links only "+("\ud83d\ude07"), Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
+                progress_barr.setVisibility(View.GONE);
 
                 Toast.makeText(getContext(), photourl, Toast.LENGTH_SHORT).show();
             }
